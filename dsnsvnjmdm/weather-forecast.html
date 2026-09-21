@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Weather App</title>
+
+<style>
+
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  font-family: Clarkson, Helvetica, sans-serif;
+ }
+
+/**body{
+    font-family:Arial,sans-serif;
+    background:#4facfe;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}**/
+
+
+	.navbar{
+    background-color: #247881;
+    height: 5rem;
+    justify-content: space-between;
+    transition: background-color .5s cubic-bezier(.165, .84, .44, 1), top .3s cubic-bezier(.455, .03, .515, .955);
+    flex-direction: row;
+}
+
+.nav_ul{
+    color:white;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.space{
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    position: absolute;
+    left: 100px; 
+    font-weight: 500;
+    letter-spacing: 1.59px;
+}
+
+.prd{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;    
+    font-weight: 500;
+    letter-spacing: 1px;
+
+
+}
+
+.lgn{
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    right: 15rem;
+    font-weight: 550;
+}
+
+.gt{
+    position: absolute;
+    background: white;
+    color: black;
+    text-decoration: none;
+    right: 5rem;
+    font-weight: 500;
+	font-weight: 550;
+    padding: 1.4%;
+    margin: -18px;
+    cursor:pointer;
+	transition: background 250ms ease;
+ }
+
+ .gt:hover{
+	 background-color: whitesmoke;
+     border-color: #f8f9fa;
+	 color:black;
+	 
+ }
+ 
+ .first{
+ background-color:#EFF7FD;
+ height:30rem;
+ }
+ .freetools{
+    color: black;
+    text-align: center;
+    font-size: 53px;
+    font-weight: 680;
+	padding-top: 4rem;
+    margin-bottom: 1rem;
+ }
+	
+.web{
+    color: #707375 ;
+    font-size: 17px;
+    text-align: center;
+    padding: 5px 0 1rem;
+    font-weight: 400;
+    font-style: normal;
+ }
+	
+.subnav_switch{
+    display: flex;
+    width: 34%;
+    margin: 3rem 0 0 33rem;
+    color: white;
+    padding-left: 11px;
+    font-weight: 400x;
+    background-color: white;
+    align-items: center;    
+    height: 60px;
+    border-radius: 40px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ }
+
+.search1{
+width:740px;
+border-color:transparent;
+height:3rem;
+font-size:15px;
+margin-top:10px;
+padding-left:1rem;
+}
+
+ .pp{
+    padding: 13px 30px;
+    margin-right:10px;
+	border-radius:40px;
+	text-decoration: none;
+	color:white;
+	font-size:17px;
+    background-color: #1a8fe3;
+    font-weight: 500;
+ }
+ 
+ .pp:hover{
+    background-color: rgb(24, 85, 146);
+    font-weight: 500;
+    cursor:pointer;
+    position: static;
+	transition: background 350ms ease;
+    border-radius: 40px;
+ }
+ 
+
+
+.weather-card{
+	margin:11rem 0 7rem 27rem;
+    background:#247881;
+    color:#333;
+    padding:25px;
+    border-radius:15px;
+	height:20rem;
+	max-width:750px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+	transition:.4s;
+}
+
+.weather-card:hover{
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+input{
+    width:90%;
+	height:25%;
+	font-size:18px;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+button{
+    padding:10px 25px;
+	font-size:15px;
+    cursor:pointer;
+	background:linear-gradient(45deg,#ff512f,#dd2476);
+    color:white;
+    border:none;
+	margin-top:12px;
+    border-radius:5px;
+}
+
+.btn:hover{
+background:linear-gradient(45deg,#ff512f,#dd2476);
+transform:scale(1.08);
+
+}
+
+#result{
+    margin-top:6rem;
+	margin-left:-25px;
+	width:47rem;
+	box-shadow:0 10px 25px rgba(0,0,0,.3);
+	padding:25px;
+	color:white;
+	Background:#247881;
+	border-radius:15px;
+}
+
+
+.flex_container3{
+display:flex;
+flex-direction:row;
+justify-content:space-evenly;
+align-items:center;
+flex-wrap:wrap;
+column-gap:3rem;
+margin:40px 14rem 0 14rem;
+}
+
+.flex-item3{
+width:100px;
+height:145px;
+background: red;
+border-radius: 7px;
+text-decoration:none;
+}
+
+.ite1{
+flex-basis:200px;
+background-color:transparent;
+flex-grow:1;
+flex-shrink:2;
+}
+
+
+.Imag2{
+color:white;
+align: top;
+text-transform: capitalize;
+text-decoration: none;
+font-weight:500;
+color: white;
+font-size: 19px;
+padding: 10rem 0 0 14px;
+}
+
+.ite2{
+background:transparent;
+flex:1 1 200px;
+}	
+
+.Imagi{
+color:white;
+align: top;
+text-transform: capitalize;
+text-decoration: none;
+font-weight:500;
+color: white;
+font-size: 18px;
+padding: 3px 0 0 14px;
+}
+
+.ite3{
+background:transparent;
+flex:1 1 200px;
+order:1;
+}
+
+.ite4{
+background: transparent;
+flex:1 1 200px;
+}
+	
+
+.copyR{
+font-weight:500;
+color: white;
+font-size: 15px;
+padding:19rem 0 0 69rem;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+	<nav class="navbar">
+        <ul class="nav_ul"> 
+            <li> <a class="space" href="LandMark.html"> ALL-IN-ONE </a> </li>
+            <li> <a class="prd" href="Image-Converter.html"> IMAGE </a> </li>
+            <li> <a class="prd" href="LandMarkCalculator.html"> CALCULATOR </a> </li>
+            <li> <a class="prd" href="weather-forecast.html"> WEATHER </a> </li>
+            <li> <a class="lgn" href="#"> LOG IN </a> </li>
+            <li> <a class="gt" href="AI-Write(LandMark).html"> TEXT TOOL </a> </li>
+        </ul>
+    </nav>
+	
+	<div class="first">
+		<h2 class="freetools"> <b> Weather Forecast Tool </b> </h2>
+		<p class="web"> Free AI Writing Tools - No Sign-Up, No Limit </p>
+		
+		<div class="subnav_switch"> 
+			<i class="fa fa-search" style="font-size:25px;margin-left:5px;color:#1a8fe3;"></i>
+			<input class="search1" type="text" placeholder="Search" required>
+			<a class="pp" href="#"> Search</a>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<div style="height:45rem;background:;padding:3rem 0px 3rem 0px;">
+
+	<div class="weather-card">
+
+<h2 style="color:white;margin:30px 0px 10px;"> <span style='font-size:47px;color:white;padding:0px 0 0 1px;'>&#127780;</span> Weather Forecast </h2>
+
+<input type="text" id="city" placeholder="Enter city">
+
+<button onclick="searchWeather()" class="btn">Search</button>
+
+<div id="result"> <p id="datetime"></p> </div>
+<script>
+  const now = new Date();
+
+  document.getElementById("datetime").innerHTML =
+    `${now.toDateString()} ${now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit"
+    })}`;
+</script>
+
+</div>
+</div>
+
+
+	<!--<div style="display:flex;">
+		<div class="cheat">   </div>!-->
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--<div class="active-circles">
+	
+		<!-- <div>
+		<img src="images/photos.png" style="width:35px;">
+		<img src="images/usability.png" style="width:35px;">
+		<img src="images/app.png" style="width:35px;">
+		<img src="images/app (1).png" style="width:35px;">
+		<img src="images/layout.png" style="width:35px;">
+		<img src="images/calculator (2).png" style="width:35px;">
+		</div> !-->
+		
+		
+		<!--<div class="box">
+		<img src="images/online-service.png" style="width:18rem;">
+		
+		<div class="box_item2" style="margin-top:-15rem;">
+		<img src="images/calculator.png" class="spin" style="width:45px;overflow:visible;margin:-310px 0 0 -3rem;">
+		</div>
+		
+		<div class="box_item3">
+		<img src="images/photos.png" class="spin" style="width:45px;margin-top:-80px;margin:-295px 0 0 4rem;">
+		</div>
+		
+		<div class="box_item4">
+		<img src="images/usability.png" style="width:45px;margin:-275px 0 0 18rem;">
+		</div>
+		
+		<div class="box_item5">
+		<img src="images/app-development.png" class="spin" style="width:45px;margin:-180px 0 0 17rem;">
+		</div>
+		
+		<div class="box_item6">
+		<img src="images/app.png" class="spin" style="width:45px;margin:-215px 0 0 -3rem;">
+		</div>
+		
+		<div class="box_item7">
+		<img src="images/app (1).png" style="width:45px;margin:-315px 0 0 12rem;">
+		</div>
+		
+		<div class="box_item8">
+		<img src="images/layout.png" style="width:45px;margin:-90px 0 0 16.5rem;">
+		</div>
+		
+		<div class="box_item9">
+		<img src="images/calculator44.png" style="width:45px;margin:-135px 0 0 -1.3rem;">
+		</div> 
+		<!-- okay so mans got exam tomorrow and man hasn't read anything yet.!-->
+		
+		
+		<!--</div>
+	</div>
+	</div>!-->
+
+
+
+
+<footer style="background-color:#030f27;height:31rem;width:100%;">
+		<div class="flex_container3">
+		<div class="flex-item3 ite1" href="#">
+				<p class="Imag2"> <b> GET IN TOUCH </b> </p> <br>
+				<p style="font-size:18px;color:white;padding:2px 0 0 14px;font-weight:680px;">123 Sobo, Egbeda Road, Lagos.
+				<br> <br> +234 816 355 3327 <br> <br>info@dmt.com </p>
+		</div>
+		<div class="flex-item3 ite2" href="#">	
+					<p class="Imag2"> <b> Tools </b> </p> <br>
+				<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Content Improver <br> <br> Essay Writer <br> <br> Paragraph Writer
+				<br> <br> AI Image Generator  </p>
+		</div>
+		<div class="flex-item3 ite3" href="#"> 
+			<p class="Imag2" style="padding-top:10rem;"> <b> Policies </b> </p> <br>
+			<p style="font-size:17px;color:white;padding:0px 0 0 14px;"> Privacy Policy <br> <br> Terms and Conditions
+			<br> <br> Cookies Policy</p>
+		
+		</div>
+		<div class="flex-item3 ite4" href="#"> 
+			<p class="Imag2" style="padding-top:12rem;"> <b>  </b> </p>
+			<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Remove Background from Image <br> <br>Solve Calculation Problems
+			<br> <br>Paragraph Writer <br> <br>Sentence Rewriter  </p>
+		</div>
+		</div>
+	
+	<div>
+		<p class="copyR"> <b> © All-In-ONE, All Right Reserved. </b> </p>
+	</div>
+	</footer>
+
+
+
+
+<script>
+
+async function searchWeather(){
+
+const city=document.getElementById("city").value;
+
+if(city===""){
+    alert("Enter a city");
+    return;
+}
+
+const geoURL=`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
+
+const geoResponse=await fetch(geoURL);
+const geoData=await geoResponse.json();
+
+if(!geoData.results){
+    document.getElementById("result").innerHTML="City not found";
+    return;
+}
+
+const lat=geoData.results[0].latitude;
+const lon=geoData.results[0].longitude;
+const name=geoData.results[0].name;
+const country=geoData.results[0].country;
+
+
+const weatherURL=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m`;
+
+const weatherResponse=await fetch(weatherURL);
+const weatherData=await weatherResponse.json();
+
+document.getElementById("result").innerHTML=`
+<h3>${name}, ${country}</h3>
+
+<p>🌡 Temperature: ${weatherData.current.temperature_2m} °C</p>
+
+<p>💧 Humidity: ${weatherData.current.relative_humidity_2m}%</p>
+
+<p>💨 Wind: ${weatherData.current.wind_speed_10m} km/h</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>

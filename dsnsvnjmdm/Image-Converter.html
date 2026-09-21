@@ -1,0 +1,883 @@
+<html>
+	<header>
+		<title> Image ↔ PDF Converter </title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</header>
+
+	<style>
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  font-family: Clarkson, Helvetica, sans-serif;
+ }
+ 
+ 
+
+	.navbar{
+    background-color: #247881;
+    height: 5rem;
+    justify-content: space-between;
+    transition: background-color .5s cubic-bezier(.165, .84, .44, 1), top .3s cubic-bezier(.455, .03, .515, .955);
+    flex-direction: row;
+}
+
+.nav_ul{
+    color:white;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.space{
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    position: absolute;
+    left: 100px; 
+    font-weight: 500;
+    letter-spacing: 1.59px;
+}
+
+.prd{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;    
+    font-weight: 500;
+    letter-spacing: 1px;
+
+
+}
+
+.lgn{
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    right: 15rem;
+    font-weight: 550;
+}
+
+.gt{
+    position: absolute;
+    background: white;
+    color: black;
+    text-decoration: none;
+    right: 5rem;
+    font-weight: 500;
+	font-weight: 550;
+    padding: 1.4%;
+    margin: -18px;
+    cursor:pointer;
+	transition: background 250ms ease;
+ }
+
+ .gt:hover{
+	 background-color: whitesmoke;
+     border-color: #f8f9fa;
+	 color:black;
+	 
+ }
+ 
+ .first{
+ background-color:#EFF7FD;
+ height:30rem;
+ }
+ .freetools{
+    color: black;
+    text-align: center;
+    font-size: 53px;
+    font-weight: 680;
+	padding-top: 4rem;
+    margin-bottom: 1rem;
+ }
+	
+.web{
+    color: #707375 ;
+    font-size: 17px;
+    text-align: center;
+    padding: 5px 0 1rem;
+    font-weight: 400;
+    font-style: normal;
+ }
+	
+.subnav_switch{
+    display: flex;
+    width: 34%;
+    margin: 3rem 0 0 33rem;
+    color: white;
+    padding-left: 11px;
+    font-weight: 400x;
+    background-color: white;
+    align-items: center;    
+    height: 60px;
+    border-radius: 40px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ }
+
+.search1{
+width:740px;
+border-color:transparent;
+height:3rem;
+font-size:15px;
+padding-left:1rem;
+}
+
+ .pp{
+    padding: 13px 30px 13px 30px;
+    margin-right:10px;
+	border-radius:40px;
+	text-decoration: none;
+	color:white;
+	font-size:17px;
+    background-color: #1a8fe3;
+    font-weight: 500;
+ }
+ 
+ .pp:hover{
+    background-color: rgb(24, 85, 146);
+    font-weight: 500;
+    cursor:pointer;
+    position: static;
+	transition: background 350ms ease;
+    border-radius: 40px;
+ }
+ 
+ 
+ 
+ 
+ .container{
+    max-width:750px;
+    margin:auto;
+    background:#247881;
+    padding:20px;
+	color:white;
+    border-radius:10px;
+	margin:7rem 0 13rem 27rem;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+	transition:.4s;
+}
+
+.container:hover{
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+button{
+    padding:10px 20px;
+    margin:10px;
+    border:none;
+    background:#007bff;
+    color:#fff;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+canvas,img{
+    max-width:100%;
+    margin-top:20px;
+}
+
+
+.btn{
+
+margin-top:25px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ff512f,#dd2476);
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.btn:hover{
+background:linear-gradient(45deg,#ff512f,#dd2476);
+transform:scale(1.08);
+box-shadow:0 10px 30px rgba(255,82,82,.5);
+
+}
+ 
+ 
+ .left{
+    width:45%;
+}
+
+.image-box{
+    width:500px;
+    height:400px;
+    margin-top:20px;
+    background:#fff;
+    border:2px solid #ccc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+canvas{
+    max-width:100%;
+    max-height:100%;
+}
+ 
+.right{
+    width:55%;
+    background:#fff;
+    padding:20px;
+	height:35rem;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+.control{
+    margin-bottom:18px;
+}
+
+.control label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.control input{
+    width:100%;
+}
+
+button {
+			margin: 5px;
+			padding: 15px 45px;
+			border: none;
+			background: linear-gradient(45deg, #ff512f, #dd2476);
+			color: white;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+		button:hover {
+			background:linear-gradient(45deg,#ff512f,#dd2476);
+transform:scale(1.08);
+		}
+ 
+ 
+ 
+ 
+ 
+ 
+ .flex_container3{
+display:flex;
+flex-direction:row;
+justify-content:space-evenly;
+align-items:center;
+flex-wrap:wrap;
+column-gap:3rem;
+margin:0px 14rem;
+}
+
+.flex-item3{
+width:100px;
+height:145px;
+background: red;
+border-radius: 7px;
+text-decoration:none;
+}
+
+.ite1{
+flex-basis:200px;
+background-color:transparent;
+flex-grow:1;
+flex-shrink:2;
+}
+
+
+.Imag2{
+color:white;
+align: top;
+text-transform: capitalize;
+text-decoration: none;
+font-weight:500;
+color: white;
+font-size: 19px;
+padding: 10rem 0 0 14px;
+}
+
+.ite2{
+background:transparent;
+flex:1 1 200px;
+}	
+
+.Imagi{
+color:white;
+align: top;
+text-transform: capitalize;
+text-decoration: none;
+font-weight:500;
+color: white;
+font-size: 18px;
+padding: 3px 0 0 14px;
+}
+
+.ite3{
+background:transparent;
+flex:1 1 200px;
+order:1;
+}
+
+.ite4{
+background: transparent;
+flex:1 1 200px;
+}
+	
+
+.copyR{
+font-weight:500;
+color: white;
+font-size: 15px;
+padding:19rem 0 0 69rem;
+}
+
+
+
+ </style>
+ 
+ 
+<body>
+
+	<nav class="navbar">
+        <ul class="nav_ul"> 
+            <li> <a class="space" href="LandMark.html"> ALL-IN-ONE </a> </li>
+            <li> <a class="prd" href="Image-Converter.html"> IMAGE </a> </li>
+            <li> <a class="prd" href="LandMarkCalculator.html"> CALCULATOR </a> </li>
+            <li> <a class="prd" href="weather-forecast.html"> WEATHER </a> </li>
+            <li> <a class="lgn" href="#"> LOG IN </a> </li>
+            <li> <a class="gt" href="AI-Write(LandMark).html"> TEXT TOOL </a> </li>
+        </ul>
+    </nav>
+	
+	<div class="first">
+		<h2 class="freetools"> <b> Image Tool </b> </h2>
+		<p class="web"> Free AI Writing Tools - No Sign-Up, No Limit </p>
+		
+		<div class="subnav_switch"> 
+			<i class="fa fa-search" style="font-size:25px;margin-left:5px;color:#1a8fe3;"></i>
+			<input class="search1" type="text" placeholder="Search" required>
+			<a class="pp" href="#"> Search</a>
+		</div>
+	</div>
+	
+	<h2 class="freetools" style="margin-top:8rem;"> <b> Convert a PDF to PNG Images </b> </h2>
+	
+	
+	
+	<div class="container">
+
+<h2 style="margin:20px;font-size:2rem;">Image ↔ PDF Converter</h2>
+
+<hr>
+
+<h3 style="margin:20px;font-size:1.8rem;margin-top:40px;">Image to PDF</h3>
+
+<input type="file" id="imageInput" accept="image/*" multiple>
+<br>
+<button onclick="imageToPDF()" class="btn" style="margin:20px;">Convert to PDF</button>
+
+<br> <br>
+<hr>
+
+<h3 style="margin:20px;font-size:1.8rem;margin-top:40px;">PDF to Image</h3>
+
+<input type="file" id="pdfInput" accept="application/pdf">
+<br>
+<button onclick="pdfToImage()" class="btn" style="margin:20px;">Convert to Image</button>
+
+<div id="output"></div>
+
+</div>
+
+<h2 class="freetools" style="margin-bottom:8rem;"> <b> Advance Image Editor	 </b> </h2>
+
+
+
+
+
+<div style="padding:95px 40px 40px 60px;background: #f2f2f2;height:55rem;display:flex;">
+<div class="left">
+
+<input type="file" id="upload" accept="image/*">
+<div class="image-box">
+<canvas id="canvas"></canvas>
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="control">
+<label>Brightness</label>
+<input type="range" id="brightness" min="0" max="200" value="100">
+</div>
+
+<div class="control">
+<label>Contrast</label>
+<input type="range" id="contrast" min="0" max="200" value="100">
+</div>
+
+<div class="control">
+<label>Saturation</label>
+<input type="range" id="saturation" min="0" max="200" value="100">
+</div>
+
+<div class="control">
+<label>Grayscale</label>
+<input type="range" id="grayscale" min="0" max="100" value="0">
+</div>
+
+<div class="control">
+<label>Sepia</label>
+<input type="range" id="sepia" min="0" max="100" value="0">
+</div>
+
+<div class="control">
+<label>Blur</label>
+<input type="range" id="blur" min="0" max="10" value="0">
+</div>
+
+<hr style="margin-top:2rem;margin-bottom:2rem;">
+
+<label style="font-size:25px;">Download as:</label>
+	<select style="width:30%;height:35px;font-size:18px;padding-left:5px;" id="format">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPG</option>
+    </select>
+	<div style="margin-top:12px;padding-left:10rem;">
+		<button onclick="downloadImage()"> DOWNLOAD </button>
+	</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer style="background-color:#030f27;height:31rem;width:100%;">
+		<div class="flex_container3">
+		<div class="flex-item3 ite1" href="#">
+				<p class="Imag2"> <b> GET IN TOUCH </b> </p> <br>
+				<p style="font-size:18px;color:white;padding:2px 0 0 14px;font-weight:680px;">123 Sobo, Egbeda Road, Lagos.
+				<br> <br> +234 816 355 3327 <br> <br>info@dmt.com </p>
+		</div>
+		<div class="flex-item3 ite2" href="#">	
+					<p class="Imag2"> <b> Tools </b> </p> <br>
+				<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Content Improver <br> <br> Essay Writer <br> <br> Paragraph Writer
+				<br> <br> AI Image Generator  </p>
+		</div>
+		<div class="flex-item3 ite3" href="#"> 
+			<p class="Imag2" style="padding-top:10rem;"> <b> Policies </b> </p> <br>
+			<p style="font-size:17px;color:white;padding:0px 0 0 14px;"> Privacy Policy <br> <br> Terms and Conditions
+			<br> <br> Cookies Policy</p>
+		
+		</div>
+		<div class="flex-item3 ite4" href="#"> 
+			<p class="Imag2" style="padding-top:12rem;"> <b>  </b> </p>
+			<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Remove Background from Image <br> <br>Solve Calculation Problems
+			<br> <br>Paragraph Writer <br> <br>Sentence Rewriter  </p>
+		</div>
+		</div>
+	
+	<div>
+		<p class="copyR"> <b> © All-In-ONE, All Right Reserved. </b> </p>
+	</div>
+	</footer>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script>
+
+// IMAGE TO PDF
+
+async function imageToPDF(){
+
+const { jsPDF } = window.jspdf;
+
+const pdf = new jsPDF();
+
+const files=document.getElementById("imageInput").files;
+
+if(files.length==0){
+alert("Select image(s)");
+return;
+}
+
+for(let i=0;i<files.length;i++){
+
+const reader=new FileReader();
+
+await new Promise(resolve=>{
+
+reader.onload=function(e){
+
+const img=new Image();
+
+img.onload=function(){
+
+const width=210;
+
+const height=(img.height/img.width)*210;
+
+if(i>0) pdf.addPage();
+
+pdf.addImage(img,'JPEG',0,0,width,height);
+
+resolve();
+
+}
+
+img.src=e.target.result;
+
+}
+
+reader.readAsDataURL(files[i]);
+
+});
+
+}
+
+pdf.save("converted.pdf");
+
+}
+
+
+// PDF TO IMAGE
+
+async function pdfToImage(){
+
+const file=document.getElementById("pdfInput").files[0];
+
+if(!file){
+alert("Select PDF");
+return;
+}
+
+const reader=new FileReader();
+
+reader.onload=async function(){
+
+const typedarray=new Uint8Array(reader.result);
+
+const pdf=await pdfjsLib.getDocument({data:typedarray}).promise;
+
+const output=document.getElementById("output");
+
+output.innerHTML="";
+
+for(let pageNum=1; pageNum<=pdf.numPages; pageNum++){
+
+const page=await pdf.getPage(pageNum);
+
+const viewport=page.getViewport({scale:2});
+
+const canvas=document.createElement("canvas");
+
+const context=canvas.getContext("2d");
+
+canvas.width=viewport.width;
+
+canvas.height=viewport.height;
+
+await page.render({
+canvasContext:context,
+viewport:viewport
+}).promise;
+
+const img=document.createElement("img");
+
+img.src=canvas.toDataURL("image/png");
+
+output.appendChild(img);
+
+output.appendChild(document.createElement("br"));
+
+const link=document.createElement("a");
+
+link.href=img.src;
+
+link.style.color = "white";
+
+link.style.background = "#D61C4E";
+
+link.style.padding = "5px";
+
+link.style.fontWeight = "bold";
+
+link.download="page-"+pageNum+".png";
+
+link.innerHTML="Download Page "+pageNum;
+
+output.appendChild(link);
+
+output.appendChild(document.createElement("hr"));
+
+}
+
+};
+
+reader.readAsArrayBuffer(file);
+
+}
+
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+
+<script>
+
+const upload=document.getElementById("upload");
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
+const image=new Image();
+
+let brightness=100;
+let contrast=100;
+let saturation=100;
+let grayscale=0;
+let sepia=0;
+let blur=0;
+
+let rotation=0;
+let flipX=1;
+let flipY=1;
+
+upload.addEventListener("change",function(e){
+
+const file=e.target.files[0];
+
+if(!file) return;
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+image.src=event.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+});
+
+image.onload=function(){
+
+canvas.width=image.width;
+canvas.height=image.height;
+
+drawImage();
+
+}
+
+function drawImage(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.save();
+
+ctx.filter=
+`
+brightness(${brightness}%)
+contrast(${contrast}%)
+saturate(${saturation}%)
+grayscale(${grayscale}%)
+sepia(${sepia}%)
+blur(${blur}px)
+`;
+
+ctx.translate(canvas.width/2,canvas.height/2);
+
+ctx.rotate(rotation*Math.PI/180);
+
+ctx.scale(flipX,flipY);
+
+ctx.drawImage(
+image,
+-image.width/2,
+-image.height/2
+);
+
+ctx.restore();
+
+}
+
+document.getElementById("brightness").oninput=function(){
+
+brightness=this.value;
+drawImage();
+
+}
+
+document.getElementById("contrast").oninput=function(){
+
+contrast=this.value;
+drawImage();
+
+}
+
+document.getElementById("saturation").oninput=function(){
+
+saturation=this.value;
+drawImage();
+
+}
+
+document.getElementById("grayscale").oninput=function(){
+
+grayscale=this.value;
+drawImage();
+
+}
+
+document.getElementById("sepia").oninput=function(){
+
+sepia=this.value;
+drawImage();
+
+}
+
+document.getElementById("blur").oninput=function(){
+
+blur=this.value;
+drawImage();
+
+}
+
+</script>
+	
+
+<script>
+
+let uploadedImage = null;
+
+const imageInput = document.getElementById("upload");
+const preview = document.getElementById("canvas");
+
+
+upload.addEventListener("change", function(event){
+
+    const file = event.target.files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            uploadedImage = new Image();
+            uploadedImage.src = e.target.result;
+
+            preview.src = e.target.result;
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+
+function downloadImage(){
+
+    if(!uploadedImage){
+
+        alert("Please upload an image first!");
+        return;
+
+    }
+
+
+    const canvas = document.createElement("canvas");
+
+    canvas.width = uploadedImage.width;
+    canvas.height = uploadedImage.height;
+
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.drawImage(
+        uploadedImage,
+        0,
+        0
+    );
+
+
+    const format = document.getElementById("format").value;
+
+
+    let imageType;
+    let extension;
+
+
+    if(format === "jpeg"){
+
+        imageType = "image/jpeg";
+        extension = "jpg";
+
+    }else{
+
+        imageType = "image/png";
+        extension = "png";
+
+    }
+
+
+    const link = document.createElement("a");
+
+    link.download = "downloaded-image." + extension;
+
+    link.href = canvas.toDataURL(imageType, 1.0);
+
+
+    link.click();
+
+}
+
+</script>
+
+
+	
+	
+	
+	
+</body>
+</html>
