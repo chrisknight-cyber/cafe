@@ -1,0 +1,486 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Chris ICT Solutions</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<script src="bootstrap/js/bootstrap.js"> </script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<style>
+		/*	:root {
+		  /* Primary Colors */
+		  --color-primary: #4A90E2;   /* Blue */
+		  --color-secondary: #50E3C2; /* Teal */
+		  --color-accent: #F5A623;    /* Orange */
+
+		  /* Neutral Colors */
+		  --color-light: #F9F9F9;
+		  --color-dark: #2C3E50;
+		  --color-gray: #95A5A6;
+
+		  /* Feedback Colors */
+		  --color-success: #27AE60;
+		  --color-warning: #F39C12;
+		  --color-error: #E74C3C;
+		} */
+		
+		*{
+			
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Open Sans", sans-serif;
+		}
+		
+		.navbar {
+			background: #520000;
+			color: white;
+			display: flex;
+			padding: 0 10px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+			height: 60px;
+		}
+		
+		
+		.hero-section {
+			margin-top: 60px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+			height: 45vh;
+			background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)), url("img/img2/p19.jpg");
+			background-size: cover;
+			align-items: center;
+		}
+		
+		.hero-section h2 {
+			width: fit-content;
+			color: #f0b27a;
+			text-align: center;
+			padding: 0.45rem 1.2rem;
+			font-size: 13px;
+			border-radius: 100px;
+			backdrop-filter: blur(8px);
+			border: 4px solid rgba(255, 255, 255, 0.12);
+			background: rgba(255, 255, 255, 0.12);
+			letter-spacing: 0.3px;
+			transition: 0.5s ease; 
+		}
+		
+		.hero-section h2:hover {
+			transform: scale(1.1);
+		}
+		
+		.hero-section div {
+			color: white;
+			text-align: center;
+			font-weight: 800;
+			margin-top: 2rem;
+		}
+		
+		.navigation-section {
+			background: #ffe0e0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+		
+		.navigation-box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.navigation-box .core {
+			text-align: center;
+			font-size: 13px;
+			color: red;
+			letter-spacing: 0.3px;
+			margin-top: 5rem;
+			padding: 0.45rem 1.2rem;
+			border: none;
+			background: linear-gradient(rgba(128, 128,128 ,0.12));
+			border-radius: 100px;
+			width: fit-content;
+		}
+		
+		.core .fa {
+			font-size: 14px;
+		}
+		
+		.navigation-box .specialize {
+			font-size: 2.5rem;
+			max-width: 500px;
+			text-align: center;
+			font-weight: 700;
+			padding: 1rem;
+		}
+		
+		.navigation-box .seamless {
+			padding: 0 0 2rem 0;
+			letter-spacing: 0.3px;
+		}
+		
+		.aspects {
+			text-align: center;
+			gap: 20px;
+			padding: 0 30px;
+			margin-bottom: 3rem;
+		}
+		
+		.aspects .calculator {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: #9c0000;
+			border: 1px solid rgba(0,0,0,0.1);
+			border-radius: 30px;
+			padding: 2rem 1.5rem;
+			text-decoration: none;
+			text-align: center;
+			transition: box-shadow 0.3s ease;
+		}
+		
+	/*	.calculator a {
+			color: black;
+			text-decoration: none;
+			font-weight: 600;
+			transition: 0.3s ease;
+		}
+	*/
+		
+		.aspects :hover {
+
+			transform: scale(1.0);
+		}
+		
+		.aspects .imageeditor {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-decoration: none;
+			justify-content: center;
+			background: #730000;
+			border: 1px solid rgba(0,0,0,0.1);
+			border-radius: 30px;
+			padding: 2rem 1.5rem;
+			transition: box-shadow 0.3s ease;
+		}
+		
+		.imageeditor a {
+			color: black;
+			text-decoration: none;
+			font-weight: 600;
+			transition: 0.3s ease;
+		}
+		
+		.imageeditor a:hover {
+			transform: scale(1.1);
+		}
+		
+		.aspects .pdftool {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: #4a0000;
+			text-decoration: none;
+			border: 1px solid rgba(0,0,0,0.1);
+			border-radius: 30px;
+			padding: 2rem 1.5rem;
+			transition: box-shadow 0.3s ease;
+		}
+		
+		.aspects div:hover {
+			box-shadow: 0 5px 15px grey;
+			transform: translateY(-0.5px);
+		}
+		
+		.pdftool a {
+			color: black;
+			text-decoration: none;
+			font-weight: 600;
+			transition: 0.3s ease;
+		}
+		
+		.pdftool a:hover {
+			transform: scale(1.1);
+		}
+		
+		.aspects .weather {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: #730000;
+			text-decoration: none;
+			border: 1px solid rgba(0,0,0,0.1);
+			border-radius: 30px;
+			padding: 2rem 1.5rem;
+			text-align: center;
+			transition: box-shadow 0.3s ease;
+		}
+		
+		.weather a {
+			color: black;
+			text-decoration: none;
+			font-weight: 600;
+			transition: 0.3s ease;
+		}
+		
+		.weather a:hover {
+			transform: scale(1.1);
+		}
+		
+		.aspects .voice {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: #9c0000;
+			text-decoration: none;
+			border: 1px solid rgba(0,0,0,0.1);
+			border-radius: 30px;
+			padding: 2rem 1.5rem;
+			text-align: center;
+			transition: box-shadow 0.3s ease;
+		}
+		
+		.voice a {
+			color: black;
+			text-decoration: none;
+			font-weight: 600;
+			transition: 0.3s ease;
+		}
+		
+		.voice a:hover {
+			transform: scale(1.1);
+		}
+		
+		.combo1 {
+			font-weight: 700;
+			font-size: 1.4rem;
+			box-sizing: border-box;
+			margin-bottom: 1rem;
+			background: white;
+			border: 1px solid rgba(0,0,0,0.2);
+			border-radius: 15px;
+			padding: 1.2rem;
+			width: fit-content;
+			text-align: center;
+			transition: background 0.3s ease;
+			color: white;
+		}
+		
+		.combo2 {
+			font-weight: 700;
+			font-size: 1.4rem;
+			margin-bottom: 0.6rem;
+			color: white;
+		}
+		
+		.combo3 {
+			font-size: 0.9rem;
+			margin-bottom: 1.2rem;
+			color: white;
+		}
+		
+		.flex_container3{
+		display:flex;
+		flex-direction:row;
+		justify-content:space-evenly;
+		align-items:center;
+		flex-wrap:wrap;
+		column-gap:4rem;
+		margin:0 4rem 0 4rem;
+		}
+
+		.flex-item3{
+		width:100px;
+		height:100px;
+		background: red;
+		border-radius: 7px;
+		text-decoration:none;
+		}
+		
+		.flex-item3 .whatsapp {
+			width: 30px;
+		}
+
+		.ite1{
+		flex-basis:200px;
+		background-color:transparent;
+		flex-grow:1;
+		flex-shrink:2;
+		}
+
+
+		.Imag2{
+		color:white;
+		align: top;
+		text-transform: capitalize;
+		text-decoration: none;
+		font-weight:500;
+		color: white;
+		font-size: 19px;
+		padding: 2rem 0 0 14px;
+		}
+
+		.ite2{
+		background:transparent;
+		flex:1 1 200px;
+		}	
+
+		.Imagi{
+		color:white;
+		align: top;
+		text-transform: capitalize;
+		text-decoration: none;
+		font-weight:500;
+		color: white;
+		font-size: 18px;
+		padding: 3px 0 0 14px;
+		}
+
+		.ite3{
+		background:transparent;
+		flex:1 1 200px;
+		order:1;
+		}
+
+		.ite4{
+		background: transparent;
+		flex:1 1 200px;
+		}
+			
+
+		.copyR{
+		font-weight:500;
+		color: white;
+		font-size: 15px;
+		padding: 15rem 0 0 0;
+		text-align: center;
+		}
+		
+	</style>
+</head>	
+<body>
+	<nav class="navbar navcontainer w-100 navbar-expand-lg">
+		<div class="container-fluid navitems"> 
+			<a class="navbar-brand logo" href="#"> <img src="img/img2/logo-design.jpg"> </a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> </span>
+			</button>
+			<div class="collapse navbar-collapse navbuttons dropdown" id="navbarTogglerDemo02">
+				<ul class="navbar-nav ms-auto me-0 me-lg-5 mb-2 mb-lg-o">
+					<li class="nav-item">
+						<a class="nav-link text-white active fs-4" aria-current="page" href="index.html"> Home </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link text-white fs-4" href="#navigation-section"> Services </a>
+					</li>
+					
+					<li class="nav-item text-white">
+						<a class="nav-link text-white fs-4" href="#footer"> Contact </a>
+					</li>
+					
+					<li class="nav-item explore text-white">
+						<a class="nav-link text-white explore fs-4" href="#"> Explore </a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</div>
+	</nav>
+	
+	<section class="hero-section">
+		<h2> Chris ICT Solutions </h2>
+		<div class="gateway"> Your one stop online shop for optimizing and proffering solutions to all your digital projects<br> Discover Our Numerous Services!</div>
+	</section>
+	
+	<section class="navigation-section" id="navigation-section">
+	<div class="navigation-box">
+		<h2 class="core"> <i class="fa fa-bars" aria-hidden="true"></i> Our core ventures </h2>
+		<h3 class="specialize "> Navigate Our Specialized Platform </h3>
+		<p class="seamless "> Providing Seamless Solutions To Specific Problems </p>
+	</div>
+	<div class="navigation-box aspects d-flex flex-column flex-md-row">	
+		<a class="calculator col-md-2 col-sm-12" href="calculator.html"> 
+			<h2 class="combo1"> 🧮 </h2>
+			<h3 class="combo2"> Calculator </h3>
+			<p class="combo3"> Solving all calulation related problems. </p>
+		</a>
+		
+		<a class="imageeditor col-md-2 col-sm-12" href="advancedimageeditor.html">
+			<h2 class="combo1"> 📸 </h2>
+			<h3 class="combo2 "> Image Editor </h3>
+			<p class="combo3"> Handle all your your image edits here. </p>
+		</a>
+		
+		<a class="pdftool col-md-2 col-sm-12" href="pdfconverter.html">
+			<h2 class="combo1"> 📽️ </h2>
+			<h3 class="combo2 "> PDF Tool </h3>
+			<p class="combo3"> Edit all your videos for free here. </p>
+		</a>
+		
+		<a class="weather col-md-2 col-sm-12" href="weatherforecast.html"> 
+			<h2 class="combo1"> 🌦️ </h2>
+			<h3 class="combo2 "> Weather forecasts </h3>
+			<p class="combo3"> Get free daily weather forecasts here.  </p>
+		</a>
+		
+		<a class="voice col-md-2 col-sm-12" href="voicetotext.html"> 
+			<h2 class="combo1"> 🎙️ </h2>
+			<h3 class="combo2 ">Voice - To - Text </h3>
+			<p class="combo3"> Convert your voice to text here. </p>
+		</a>
+	</div>
+	</section>
+	
+	<footer style="background-color:#210000;width:100%;" id="footer">
+		<div class="flex_container3">
+		<div class="flex-item3 ite1" href="#">
+				<p class="Imag2"> <b> Stay Connected </b> </p> <br>
+				<p style="font-size:18px;color:white;padding:2px 0 0 14px;font-weight:680px;">1th Avenue Okowonjor, Egbeda Road, Lagos.
+				<br> <br> <img class="whatsapp" src="img/whatsapp.svg" alt="whatsapp Icon"> +234 708 282 5660 <br> <br>info@chrisict.com </p>
+		</div>
+		<div class="flex-item3 ite2" href="#">	
+					<p class="Imag2"> <b> Tools </b> </p> <br>
+				<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Content Editor <br> <br> Thesis Writer <br> <br> SOP Writer
+				<br> <br> AI Image Generator  </p>
+		</div>
+		<div class="flex-item3 ite3" href="#"> 
+			<p class="Imag2" style="padding-top:2rem;"> <b> Policies </b> </p> <br>
+			<p style="font-size:17px;color:white;padding:0px 0 0 14px;"> Privacy Policy <br> <br> Terms and Conditions
+			<br> <br> Cookies Policy</p>
+		
+		</div>
+		<div class="flex-item3 ite4" href="#"> 
+			<p class="Imag2" style="padding-top:3rem;"> <b> Editors </b> </p>
+			<p style="font-size:16px;color:white;padding:2px 0 0 14px;">Image Background Removal <br> <br>Solve Calculation Problems
+			<br> <br>Resume Creator <br> <br> Proof Reader  </p>
+		</div>
+		</div>
+	
+	<div>
+		<p class="copyR"> <b> ©Chrisknight. </b> </p>
+	</div>
+	</footer>
+
+	
+</body>
+
+</html>
