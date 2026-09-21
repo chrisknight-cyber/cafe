@@ -1,0 +1,319 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.js"> </script>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<style>
+		*{
+			
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Open Sans", sans-serif;
+		}
+		
+		.navbar {
+			background: #520000;
+			color: white;
+			display: flex;
+			padding: 0 10px;
+			position: fixed;
+			top: 0;
+			z-index: 1000;
+			width: 100%;
+			height: 60px;
+		}
+	
+	/* ====== Calculator Styling ====== */
+/*    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+		flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+	 */
+    .calculator {
+		margin-top: 60px;
+		font-family: Arial, sans-serif;
+		display: flex;
+		flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffe0e0;
+		height: 100vh;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .display {
+        height: 50px;
+        font-size: 1.5rem;
+        text-align: right;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        background: #fff;
+    }
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        gap: 10px;
+    }
+    button {
+        padding: 15px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #444;
+        color: white;
+        transition: background 0.2s;
+    }
+    button:hover {
+        background: #666;
+    }
+    .operator {
+        background: #ff9500;
+    }
+    .operator:hover {
+        background: #e08900;
+    }
+    .equal {
+        background: #28a745;
+        grid-column: span 2;
+    }
+    .equal:hover {
+        background: #218838;
+    }
+    .clear {
+        background: #dc3545;
+    }
+    .clear:hover {
+        background: #b02a37;
+    }
+	
+	.flex_container3{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-items:center;
+	flex-wrap:wrap;
+	column-gap:4rem;
+	margin:0 4rem 0 4rem;
+	}
+
+	.flex-item3{
+	width:100px;
+	height:100px;
+	background: red;
+	border-radius: 7px;
+	text-decoration:none;
+	}
+	
+	.flex-item3 .whatsapp {
+		width: 30px;
+	}
+
+	.ite1{
+	flex-basis:200px;
+	background-color:transparent;
+	flex-grow:1;
+	flex-shrink:2;
+	}
+
+
+	.Imag2{
+	color:white;
+	align: top;
+	text-transform: capitalize;
+	text-decoration: none;
+	font-weight:500;
+	color: white;
+	font-size: 19px;
+	padding: 2rem 0 0 14px;
+	}
+
+	.ite2{
+	background:transparent;
+	flex:1 1 200px;
+	}	
+
+	.Imagi{
+	color:white;
+	align: top;
+	text-transform: capitalize;
+	text-decoration: none;
+	font-weight:500;
+	color: white;
+	font-size: 18px;
+	padding: 3px 0 0 14px;
+	}
+
+	.ite3{
+	background:transparent;
+	flex:1 1 200px;
+	order:1;
+	}
+
+	.ite4{
+	background: transparent;
+	flex:1 1 200px;
+	}
+		
+
+	.copyR{
+	font-weight:500;
+	color: white;
+	font-size: 15px;
+	padding: 15rem 0 0 0;
+	text-align: center;
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navcontainer w-100 navbar-expand-lg">
+		<div class="container-fluid navitems"> 
+			<a class="navbar-brand logo" href="#"> <img src="img/img2/logo-design.jpg"> </a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> </span>
+			</button>
+			<div class="collapse navbar-collapse navbuttons dropdown" id="navbarTogglerDemo02">
+				<ul class="navbar-nav ms-auto me-0 me-lg-5 mb-2 mb-lg-o">
+					<li class="nav-item">
+						<a class="nav-link text-white active fs-4" aria-current="page" href="index.html"> Home </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link text-white fs-4" href="index.html#navigation-section"> Services </a>
+					</li>
+					
+					<li class="nav-item text-white">
+						<a class="nav-link text-white fs-4" href="calculator.html#footer"> Contact </a>
+					</li>
+					
+					<li class="nav-item explore text-white">
+						<a class="nav-link text-white explore fs-4" href="#"> Explore </a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</div>
+	</nav>
+
+	<div class="calculator">
+		<input type="text" class="display" id="display" disabled>
+		<div class="buttons">
+			<button class="clear" onclick="clearDisplay()">C</button>
+			<button onclick="deleteLast()">⌫</button>
+			<button class="operator" onclick="appendOperator('/')">÷</button>
+			<button class="operator" onclick="appendOperator('*')">×</button>
+
+			<button onclick="appendNumber('7')">7</button>
+			<button onclick="appendNumber('8')">8</button>
+			<button onclick="appendNumber('9')">9</button>
+			<button class="operator" onclick="appendOperator('-')">−</button>
+
+			<button onclick="appendNumber('4')">4</button>
+			<button onclick="appendNumber('5')">5</button>
+			<button onclick="appendNumber('6')">6</button>
+			<button class="operator" onclick="appendOperator('+')">+</button>
+
+			<button onclick="appendNumber('1')">1</button>
+			<button onclick="appendNumber('2')">2</button>
+			<button onclick="appendNumber('3')">3</button>
+			<button class="equal" onclick="calculateResult()">=</button>
+
+			<button onclick="appendNumber('0')">0</button>
+			<button onclick="appendNumber('.')">.</button>
+		</div>
+	</div>
+	
+	<footer style="background-color:#210000;width:100%;" id= "footer">
+		<div class="flex_container3">
+		<div class="flex-item3 ite1" href="#">
+				<p class="Imag2"> <b> GET IN TOUCH </b> </p> <br>
+				<p style="font-size:18px;color:white;padding:2px 0 0 14px;font-weight:680px;">123 Sobo, Egbeda Road, Lagos.
+				<br> <br> <img class="whatsapp" src="img/whatsapp.svg" alt="whatsapp Icon"> +234 815 989 7630 <br> <br>info@dmt.com </p>
+		</div>
+		<div class="flex-item3 ite2" href="#">	
+					<p class="Imag2"> <b> Tools </b> </p> <br>
+				<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Content Improver <br> <br> Essay Writer <br> <br> Paragraph Writer
+				<br> <br> AI Image Generator  </p>
+		</div>
+		<div class="flex-item3 ite3" href="#"> 
+			<p class="Imag2" style="padding-top:2rem;"> <b> Policies </b> </p> <br>
+			<p style="font-size:17px;color:white;padding:0px 0 0 14px;"> Privacy Policy <br> <br> Terms and Conditions
+			<br> <br> Cookies Policy</p>
+		
+		</div>
+		<div class="flex-item3 ite4" href="#"> 
+			<p class="Imag2" style="padding-top:3rem;"> <b>  </b> </p>
+			<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Remove Background from Image <br> <br>Solve Calculation Problems
+			<br> <br>Paragraph Writer <br> <br>Sentence Rewriter  </p>
+		</div>
+		</div>
+	
+	<div>
+		<p class="copyR"> <b> ©Chrisknight. </b> </p>
+	</div>
+	</footer>
+
+
+<script>
+    const display = document.getElementById('display');
+
+    // Append number to display
+    function appendNumber(num) {
+        display.value += num;
+    }
+
+    // Append operator with validation
+    function appendOperator(op) {
+        if (display.value === '') return; // Prevent starting with operator
+        const lastChar = display.value.slice(-1);
+        if ('+-*/'.includes(lastChar)) {
+            display.value = display.value.slice(0, -1) + op; // Replace last operator
+        } else {
+            display.value += op;
+        }
+    }
+
+    // Clear display
+    function clearDisplay() {
+        display.value = '';
+    }
+
+    // Delete last character
+    function deleteLast() {
+        display.value = display.value.slice(0, -1);
+    }
+
+    // Calculate result safely
+    function calculateResult() {
+        try {
+            if (display.value === '') return;
+            const result = eval(display.value);
+            if (isNaN(result) || !isFinite(result)) {
+                display.value = 'Error';
+            } else {
+                display.value = result;
+            }
+        } catch {
+            display.value = 'Error';
+        }
+    }
+</script>
+
+</body>
+</html>

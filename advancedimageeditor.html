@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advanced Image Editor</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="style.css">
+	
+	<style>
+	
+	*{
+			
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Open Sans", sans-serif;
+		}
+		
+		.navbar {
+			background: #520000;
+			color: white;
+			display: flex;
+			padding: 0 10px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+			height: 60px;
+		}
+		
+		body {
+			text-align: center;
+		}
+		
+		.imageeditor {
+			background: #ffe0e0;
+		}
+		
+		.editor-container {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 20px;
+		}
+		canvas {
+			border: 1px solid #ccc;
+			max-width: 100%;
+			background: white;
+		}
+		.controls {
+			margin: 20px;
+			background: white;
+			padding: 15px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		}
+		.controls label {
+			display: block;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		.controls input[type="range"] {
+			width: 200px;
+		}
+		button {
+			margin: 5px;
+			padding: 8px 12px;
+			border: none;
+			background: #333;
+			color: white;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+		button:hover {
+			background: #555;
+		}
+		
+		.flex_container3{
+			display:flex;
+			flex-direction:row;
+			justify-content:space-evenly;
+			align-items:center;
+			flex-wrap:wrap;
+			column-gap:4rem;
+			margin:0 4rem 0 4rem;
+			}
+
+			.flex-item3{
+			width:100px;
+			height:100px;
+			background: red;
+			border-radius: 7px;
+			text-decoration:none;
+			}
+			
+			.flex-item3 .whatsapp {
+				width: 30px;
+			}
+
+			.ite1{
+			flex-basis:200px;
+			background-color:transparent;
+			flex-grow:1;
+			flex-shrink:2;
+			}
+
+
+			.Imag2{
+			color:white;
+			align: top;
+			text-transform: capitalize;
+			text-decoration: none;
+			font-weight:500;
+			color: white;
+			font-size: 19px;
+			padding: 2rem 0 0 14px;
+			}
+
+			.ite2{
+			background:transparent;
+			flex:1 1 200px;
+			}	
+
+			.Imagi{
+			color:white;
+			align: top;
+			text-transform: capitalize;
+			text-decoration: none;
+			font-weight:500;
+			color: white;
+			font-size: 18px;
+			padding: 3px 0 0 14px;
+			}
+
+			.ite3{
+			background:transparent;
+			flex:1 1 200px;
+			order:1;
+			}
+
+			.ite4{
+			background: transparent;
+			flex:1 1 200px;
+			}
+				
+
+			.copyR{
+			font-weight:500;
+			color: white;
+			font-size: 15px;
+			padding: 15rem 0 0 0;
+			text-align: center;
+			}
+			
+			
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navcontainer w-100 navbar-expand-lg">
+		<div class="container-fluid navitems"> 
+			<a class="navbar-brand logo" href="#"> <img src="img/img2/logo-design.jpg"> </a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> </span>
+			</button>
+			<div class="collapse navbar-collapse navbuttons dropdown" id="navbarTogglerDemo02">
+				<ul class="navbar-nav ms-auto me-0 me-lg-5 mb-2 mb-lg-o">
+					<li class="nav-item">
+						<a class="nav-link text-white active fs-4" aria-current="page" href="index.html"> Home </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link text-white fs-4" href="index.html#navigation-section"> Services </a>
+					</li>
+					
+					<li class="nav-item text-white">
+						<a class="nav-link text-white fs-4" href="advancedimageeditor.html#footer"> Contact </a>
+					</li>
+					
+					<li class="nav-item explore text-white">
+						<a class="nav-link text-white explore fs-4" href="#"> Explore </a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</div>
+	</nav>
+
+<section class="imageeditor">
+    <h1 style="margin-top:60px;">Advanced Image Editor</h1>
+
+	<div class="editor-container">
+		<div>
+			<input type="file" id="upload" accept="image/*">
+			<canvas id="canvas"></canvas>
+		</div>
+
+		<div class="controls">
+			<label>Brightness</label>
+			<input type="range" id="brightness" min="0" max="200" value="100">
+			
+			<label>Contrast</label>
+			<input type="range" id="contrast" min="0" max="200" value="100">
+			
+			<label>Saturation</label>
+			<input type="range" id="saturation" min="0" max="200" value="100">
+			
+			<label>Grayscale</label>
+			<input type="range" id="grayscale" min="0" max="100" value="0">
+			
+			<label>Sepia</label>
+			<input type="range" id="sepia" min="0" max="100" value="0">
+			
+			<label>Blur</label>
+			<input type="range" id="blur" min="0" max="10" value="0">
+
+			<hr>
+			<button id="rotateLeft">Rotate Left</button>
+			<button id="rotateRight">Rotate Right</button>
+			<button id="flipH">Flip Horizontal</button>
+			<button id="flipV">Flip Vertical</button>
+
+			<hr>
+			<button id="crop">Crop</button>
+			<button id="reset">Reset</button>
+
+			<hr>
+			<label>Download as:</label>
+			<button onclick="downloadImage('image/png')">PNG</button>
+			<button onclick="downloadImage('image/jpeg')">JPEG</button>
+			<button onclick="downloadImage('image/webp')">WebP</button>
+		</div>
+	</div>
+</section>
+
+<footer style="background-color:#210000;width:100%;" id= "footer">
+		<div class="flex_container3">
+		<div class="flex-item3 ite1" href="#">
+				<p class="Imag2"> <b> GET IN TOUCH </b> </p> <br>
+				<p style="font-size:18px;color:white;padding:2px 0 0 14px;font-weight:680px;">123 Sobo, Egbeda Road, Lagos.
+				<br> <br> <img class="whatsapp" src="img/whatsapp.svg" alt="whatsapp Icon"> +234 815 989 7630 <br> <br>info@dmt.com </p>
+		</div>
+		<div class="flex-item3 ite2" href="#">	
+					<p class="Imag2"> <b> Tools </b> </p> <br>
+				<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Content Improver <br> <br> Essay Writer <br> <br> Paragraph Writer
+				<br> <br> AI Image Generator  </p>
+		</div>
+		<div class="flex-item3 ite3" href="#"> 
+			<p class="Imag2" style="padding-top:2rem;"> <b> Policies </b> </p> <br>
+			<p style="font-size:17px;color:white;padding:0px 0 0 14px;"> Privacy Policy <br> <br> Terms and Conditions
+			<br> <br> Cookies Policy</p>
+		
+		</div>
+		<div class="flex-item3 ite4" href="#"> 
+			<p class="Imag2" style="padding-top:3rem;"> <b>  </b> </p>
+			<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Remove Background from Image <br> <br>Solve Calculation Problems
+			<br> <br>Paragraph Writer <br> <br>Sentence Rewriter  </p>
+		</div>
+		</div>
+	
+	<div>
+		<p class="copyR"> <b> ©Chrisknight. </b> </p>
+	</div>
+	</footer>
+
+
+<script>
+const upload = document.getElementById('upload');
+const canvas = document.getElementById('upload');
+const ctx = canvas.getContext('2d');
+
+let img = new Image();
+let rotation = 0;
+let flipH = 1, flipV = 1;
+let cropMode = false;
+let cropStart = null;
+let filters = {
+    brightness: 100,
+    contrast: 100,
+    saturation: 100,
+    grayscale: 0,
+    sepia: 0,
+    blur: 0
+};
+
+// Load image
+upload.addEventListener('change', function(e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload =function (event) => {
+        image.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+});
+
+img.onload = function() => {
+    canvas.width = image.width;
+    canvas.height = image.height;
+    drawImage();
+};
+
+// Apply filters and transformations
+function drawImage() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+    ctx.filter = `
+        brightness(${filters.brightness}%)
+        contrast(${filters.contrast}%)
+        saturate(${filters.saturation}%)
+        grayscale(${filters.grayscale}%)
+        sepia(${filters.sepia}%)
+        blur(${filters.blur}px)
+    `;
+	ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate(rotation * Math.PI / 180);
+    ctx.scale(flipH, flipV);
+    ctx.drawImage(img, -img.width / 2, -img.height / 2);
+    ctx.restore();
+}
+
+// Filter controls
+document.querySelectorAll('.controls input[type="range"]').forEach(input => {
+    input.addEventListener('input', () => {
+        filters[input.id] = input.value;
+        drawImage();
+    });
+});
+
+// Rotation & flipping
+document.getElementById('rotateLeft').onclick = () => { rotation -= 90; drawImage(); };
+document.getElementById('rotateRight').onclick = () => { rotation += 90; drawImage(); };
+document.getElementById('flipH').onclick = () => { flipH *= -1; drawImage(); };
+document.getElementById('flipV').onclick = () => { flipV *= -1; drawImage(); };
+
+// Cropping
+document.getElementById('crop').onclick = () => {
+    cropMode = !cropMode;
+    alert(cropMode ? "Click and drag to crop" : "Crop mode off");
+};
+
+canvas.addEventListener('mousedown', e => {
+    if (!cropMode) return;
+    cropStart = { x: e.offsetX, y: e.offsetY };
+});
+
+canvas.addEventListener('mouseup', e => {
+    if (!cropMode || !cropStart) return;
+    const cropEnd = { x: e.offsetX, y: e.offsetY };
+    const x = Math.min(cropStart.x, cropEnd.x);
+    const y = Math.min(cropStart.y, cropEnd.y);
+    const w = Math.abs(cropEnd.x - cropStart.x);
+    const h = Math.abs(cropEnd.y - cropStart.y);
+
+    const cropped = ctx.getImageData(x, y, w, h);
+    canvas.width = w;
+    canvas.height = h;
+    ctx.putImageData(cropped, 0, 0);
+	};
+	
+    </script>
+    
+    </body>
+    </html>

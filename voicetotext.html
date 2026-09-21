@@ -1,0 +1,437 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title> Voice to Text </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<script src="bootstrap/js/bootstrap.js"> </script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		*{
+			
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Open Sans", sans-serif;
+		}
+		
+		.navbar {
+			background: #520000;
+			color: white;
+			display: flex;
+			padding: 0 10px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+			height: 60px;
+		}
+		
+		.convert {
+			background: #ffe0e0;
+			margin-bottom: 0; important!
+		}
+		 
+		 .container{
+			width:40%;
+			height:20rem;
+			background:white;
+			color:black;
+			font-size:20px;
+			border-radius:15px;
+			margin:3rem 0 3rem 30rem;
+			box-shadow:0 0 10px rgba(0,0,0,.2);
+			transition:.4s;
+		}
+
+		.container:hover{
+		transform:translateY(-8px);
+
+		box-shadow:0 20px 40px rgba(0,0,0,.2);
+		}
+
+		.freetools{
+			margin-top: 60px;
+			color: black;
+			text-align: center;
+			font-size: 53px;
+			font-weight: 680;
+			padding-top: 4rem;
+			margin-bottom: 1rem;
+		 }
+		 
+		 
+		 .btn{
+		margin-bottom:3rem;
+		margin-left:1.5rem;
+		padding:15px 20px;
+		border:none;
+		border-radius:40px;
+		background:linear-gradient(45deg,#ff512f,#dd2476);
+		color:white;
+		font-size:16px;
+		font-weight:600;
+		cursor:pointer;
+		transition:.3s;
+
+		}
+
+		.btn:hover{
+		background:linear-gradient(45deg,#ff512f,#dd2476);
+		transform:scale(1.08);
+		box-shadow:0 10px 30px rgba(255,82,82,.5);
+		}
+
+
+		.flex_container3{
+		display:flex;
+		flex-direction:row;
+		justify-content:space-evenly;
+		align-items:center;
+		flex-wrap:wrap;
+		column-gap:4rem;
+		margin:0 4rem 0 4rem;
+		}
+
+		.flex-item3{
+		width:100px;
+		height:100px;
+		background: red;
+		border-radius: 7px;
+		text-decoration:none;
+		}
+		
+		.flex-item3 .whatsapp {
+			width: 30px;
+		}
+
+		.ite1{
+		flex-basis:200px;
+		background-color:transparent;
+		flex-grow:1;
+		flex-shrink:2;
+		}
+
+
+		.Imag2{
+		color:white;
+		align: top;
+		text-transform: capitalize;
+		text-decoration: none;
+		font-weight:500;
+		color: white;
+		font-size: 19px;
+		padding: 2rem 0 0 14px;
+		}
+
+		.ite2{
+		background:transparent;
+		flex:1 1 200px;
+		}	
+
+		.Imagi{
+		color:white;
+		align: top;
+		text-transform: capitalize;
+		text-decoration: none;
+		font-weight:500;
+		color: white;
+		font-size: 18px;
+		padding: 3px 0 0 14px;
+		}
+
+		.ite3{
+		background:transparent;
+		flex:1 1 200px;
+		order:1;
+		}
+
+		.ite4{
+		background: transparent;
+		flex:1 1 200px;
+		}
+			
+
+		.copyR{
+		font-weight:500;
+		color: white;
+		font-size: 15px;
+		padding: 15rem 0 0 0;
+		text-align: center;
+		}
+
+	</style>
+</head>
+
+<body>
+	
+	<nav class="navbar navcontainer w-100 navbar-expand-lg">
+		<div class="container-fluid navitems"> 
+			<a class="navbar-brand logo" href="#"> <img src="img/img2/logo-design.jpg"> </a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> </span>
+			</button>
+			<div class="collapse navbar-collapse navbuttons dropdown" id="navbarTogglerDemo02">
+				<ul class="navbar-nav ms-auto me-0 me-lg-5 mb-2 mb-lg-o">
+					<li class="nav-item">
+						<a class="nav-link text-white active fs-4" aria-current="page" href="index.html"> Home </a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link text-white fs-4" href="index.html#navigation-section"> Services </a>
+					</li>
+					
+					<li class="nav-item text-white">
+						<a class="nav-link text-white fs-4" href="voicetotext.html#footer"> Contact </a>
+					</li>
+					
+					<li class="nav-item explore text-white">
+						<a class="nav-link text-white explore fs-4" href="#"> Explore </a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</div>
+	</nav>
+	
+	<section class="convert">
+		<div>
+			<h2 class="freetools"> <b>  Convert Voice to Text </b> </h2>
+		</div>
+
+		<div>	
+			<textarea class="container" id="text"> </textarea>
+		</div>
+
+		<div style="display:flex;margin-left:31rem;">
+			<button onclick="startListening()" class="btn" id="click_to_convert"> 🎤 Voice to Text </button>
+			<button onclick="speakText()" class="btn" id="click_to_convert"> 🔊 Speak </button>
+			<button onclick="stopListening()" class="btn" id="click_to_convert"> ⏹ Stop </button>
+			<button onclick="clearText()" class="btn" id="click_to_convert"> 🗑 Clear </button>
+		</div>
+	
+	</section>
+	
+	
+	
+	<footer style="background-color:#030f27;width:100%;" id= "footer">
+		<div class="flex_container3">
+		<div class="flex-item3 ite1" href="#">
+				<p class="Imag2"> <b> GET IN TOUCH </b> </p> <br>
+				<p style="font-size:18px;color:white;padding:2px 0 0 14px;font-weight:680px;">123 Sobo, Egbeda Road, Lagos.
+				<br> <br> <img class="whatsapp" src="img/whatsapp.svg" alt="whatsapp Icon"> +234 815 989 7630 <br> <br>info@dmt.com </p>
+		</div>
+		<div class="flex-item3 ite2" href="#">	
+					<p class="Imag2"> <b> Tools </b> </p> <br>
+				<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Content Improver <br> <br> Essay Writer <br> <br> Paragraph Writer
+				<br> <br> AI Image Generator  </p>
+		</div>
+		<div class="flex-item3 ite3" href="#"> 
+			<p class="Imag2" style="padding-top:2rem;"> <b> Policies </b> </p> <br>
+			<p style="font-size:17px;color:white;padding:0px 0 0 14px;"> Privacy Policy <br> <br> Terms and Conditions
+			<br> <br> Cookies Policy</p>
+		
+		</div>
+		<div class="flex-item3 ite4" href="#"> 
+			<p class="Imag2" style="padding-top:3rem;"> <b>  </b> </p>
+			<p style="font-size:16px;color:white;padding:2px 0 0 14px;"> Remove Background from Image <br> <br>Solve Calculation Problems
+			<br> <br>Paragraph Writer <br> <br>Sentence Rewriter  </p>
+		</div>
+		</div>
+	
+	<div>
+		<p class="copyR"> <b> ©Chrisknight. </b> </p>
+	</div>
+	</footer>
+	
+	
+	
+	<script>
+
+// Load available voices
+let voices = [];
+
+function loadVoices() {
+    voices = speechSynthesis.getVoices();
+}
+
+loadVoices();
+
+if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+
+// =======================
+// TEXT TO SPEECH
+// =======================
+
+function speakText() {
+
+    const text = document.getElementById("text").value;
+
+    if (!text.trim()) {
+        alert("Please type something first.");
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    const speech = new SpeechSynthesisUtterance(text);
+
+    // Try African English voices first
+    let selectedVoice = voices.find(v =>
+        v.lang.toLowerCase().includes("en-ng") ||
+        v.lang.toLowerCase().includes("en-za") ||
+        v.name.toLowerCase().includes("nigeria") ||
+        v.name.toLowerCase().includes("africa") ||
+        v.name.toLowerCase().includes("south africa")
+    );
+
+    // Then try male voices
+    if (!selectedVoice) {
+        selectedVoice = voices.find(v =>
+            v.name.toLowerCase().includes("male") ||
+            v.name.toLowerCase().includes("david") ||
+            v.name.toLowerCase().includes("guy") ||
+            v.name.toLowerCase().includes("daniel")
+        );
+    }
+
+    // Final fallback
+    if (!selectedVoice) {
+        selectedVoice = voices.find(v => v.lang.startsWith("en"));
+    }
+
+    if (selectedVoice) {
+        speech.voice = selectedVoice;
+    }
+
+    speech.lang = "en-NG";
+    speech.rate = 0.95;
+    speech.pitch = 0.85;
+    speech.volume = 1;
+
+    speechSynthesis.speak(speech);
+}
+
+
+
+// =======================
+// SPEECH TO TEXT
+// =======================
+
+const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+let recognition;
+
+if (SpeechRecognition) {
+
+    recognition = new SpeechRecognition();
+
+    recognition.continuous = true;
+
+    recognition.interimResults = true;
+
+    recognition.lang = "en-NG";
+
+    recognition.onresult = function(event) {
+
+        let transcript = "";
+
+        for (let i = 0; i < event.results.length; i++) {
+
+            transcript += event.results[i][0].transcript;
+
+        }
+
+        document.getElementById("text").value = transcript;
+
+    };
+
+    recognition.onerror = function(event){
+
+        alert("Speech Recognition Error: " + event.error);
+
+    };
+
+}
+
+
+
+// =======================
+// START LISTENING
+// =======================
+
+function startListening(){
+
+    if(recognition){
+
+        recognition.start();
+
+    }else{
+
+        alert("Speech Recognition is not supported in this browser.");
+
+    }
+
+}
+function stopListening(){
+    if(recognition){
+        recognition.stop();
+
+    }
+}
+function clearText(){
+    document.getElementById("text").value="";
+    speechSynthesis.cancel();
+
+}
+
+</script>
+	
+	
+	
+	
+	
+	<!-- <script>
+	click_to_convert.addEventListener('click',function(){
+	var speech = true;
+	window.SpeechRecognition = window.webkitSpeechRecognition;
+	const recognition = SpeechRecognition();
+	recognition.interimResults = true;
+	
+	recognition.addedEventListener('result', e=>{
+	const transcript = Array.from(e.results)
+	.map(result =>result[0])
+	.map(result =>result.transcript)
+	
+	convert_text.innerHTML = transcript;
+	})
+	
+	if (speech == true){
+	recognition.start()}
+	
+	})
+	
+	
+	</script>!-->
+	
+	
+	
+	
+	
+
+
+
+</body>
+</html>
